@@ -10,16 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	@IBOutlet var colorView: UIView!
+	
+	@IBOutlet var rSlider: UISlider!
+	@IBOutlet var gSlider: UISlider!
+	@IBOutlet var bSlider: UISlider!
+	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
 	}
-
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	
+	@IBAction func updateColorView() {
+		
+		println("r: \(rSlider.value)\ng:\(gSlider.value)\nb:\(bSlider.value)")
+		colorView.backgroundColor = UIColor(red: CGFloat(rSlider.value), green: CGFloat(gSlider.value), blue: CGFloat(bSlider.value), alpha: 1)
 	}
-
-
 }
-
